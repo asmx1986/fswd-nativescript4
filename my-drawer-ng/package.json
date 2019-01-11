@@ -1,11 +1,11 @@
 {
     "nativescript": {
         "id": "org.nativescript.mydrawerng",
-        "tns-android": {
-            "version": "5.1.0"
-        },
         "tns-ios": {
             "version": "5.1.0"
+        },
+        "tns-android": {
+            "version": "5.0.0"
         }
     },
     "description": "NativeScript Application",
@@ -27,6 +27,7 @@
         "@ngrx/effects": "^7.0.0",
         "@ngrx/store": "^7.0.0",
         "nativescript-angular": "~7.1.0",
+        "nativescript-plugin-firebase": "^7.6.1",
         "nativescript-sqlite": "^2.2.4",
         "nativescript-theme-core": "~1.0.4",
         "nativescript-toasts": "^1.0.3",
