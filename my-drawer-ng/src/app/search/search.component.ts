@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { Store } from "@ngrx/store";
+import * as SocialShare from "nativescript-social-share";
 import * as Toast from "nativescript-toasts";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
@@ -41,6 +42,11 @@ export class SearchComponent implements OnInit {
 
     onItemTap(args): void {
         this.store.dispatch(new NuevaNoticiaAction(new Noticia(args.view.bindingContext)));
+    }
+
+    onLongPress(s): void {
+        console.log(s);
+        SocialShare.shareText(s, "Asunto: compartido desde el curso!");
     }
 
     buscarAhora(s: string) {

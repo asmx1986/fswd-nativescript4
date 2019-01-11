@@ -28,6 +28,7 @@
         "@ngrx/store": "^7.0.0",
         "nativescript-angular": "~7.1.0",
         "nativescript-plugin-firebase": "^7.6.1",
+        "nativescript-social-share": "^1.5.1",
         "nativescript-sqlite": "^2.2.4",
         "nativescript-theme-core": "~1.0.4",
         "nativescript-toasts": "^1.0.3",
