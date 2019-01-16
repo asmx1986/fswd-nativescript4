@@ -3,6 +3,7 @@ import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 import { NoticiasService } from "../domain/noticias.service";
+import { MinLenDirective } from "../minlen.validator";
 import { SearchFormComponent } from "./search-form.component";
 import { SearchRoutingModule } from "./search-routing.module";
 import { SearchComponent } from "./search.component";
@@ -15,7 +16,8 @@ import { SearchComponent } from "./search.component";
     ],
     declarations: [
         SearchComponent,
-        SearchFormComponent
+        SearchFormComponent,
+        MinLenDirective
     ],
     // providers: [NoticiasService],
     schemas: [
