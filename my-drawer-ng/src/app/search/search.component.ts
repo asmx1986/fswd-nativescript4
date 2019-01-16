@@ -15,7 +15,7 @@ import { NoticiasService } from "../domain/noticias.service";
     providers: [NoticiasService]*/
 })
 export class SearchComponent implements OnInit {
-    resultados: Array<string>;
+    resultados: Array<string> = [];
     @ViewChild("layout") layout: ElementRef;
 
     constructor(
@@ -33,6 +33,15 @@ export class SearchComponent implements OnInit {
                     Toast.show({text: "Sugerimos leer: " + f.titulo, duration: Toast.DURATION.SHORT});
                 }
             });
+    }
+
+    onPull(e) {
+        console.log(e);
+        const pullRefresh = e.object;
+        setTimeout(() => {
+            this.resultados.push("xxxxxxx");
+            pullRefresh.refreshing = false;
+        }, 2000);
     }
 
     onDrawerButtonTap(): void {
