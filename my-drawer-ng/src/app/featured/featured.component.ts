@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { compose } from "nativescript-email";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { GestureEventData } from "tns-core-modules/ui/gestures/gestures";
@@ -35,6 +36,29 @@ export class FeaturedComponent implements OnInit {
             rotate: 360,
             duration: 2000
         });
+
+        const fs = require("file-system");
+        const appFolder = fs.knownFolders.currentApp();
+        const appPath = appFolder.path;
+        const logoPath = appPath + "/app/res/icon.png";
+
+        compose({
+            subject: "Mail de Prueba",
+            body: "Hola <strong>mundo!</strong> :)",
+            to: ["mail@mail.com"],
+            cc: [],
+            bcc: [],
+            attachments: [
+              {
+                  fileName: "arrow1.png",
+                  path: "base64://iVBORw0KGgoAAAANSUhEUgAAABYAAAAoCAYAAAD6xArmAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAHGlET1QAAAACAAAAAAAAABQAAAAoAAAAFAAAABQAAAB5EsHiAAAAAEVJREFUSA1iYKAimDhxYjwIU9FIBgaQgZMmTfoPwlOmTJGniuHIhlLNxaOGwiNqNEypkwlGk9RokoIUfaM5ijo5Clh9AAAAAP//ksWFvgAAAEFJREFUY5g4cWL8pEmT/oMwiM1ATTBqONbQHA2W0WDBGgJYBUdTy2iwYA0BrILDI7VMmTJFHqv3yBUEBQsIg/QDAJNpcv6v+k1ZAAAAAElFTkSuQmCC",
+                  mimeType: "image/png"
+              },
+              {
+                  fileName: "icon.png",
+                  path: logoPath,
+                  mimeType: "image/png"
+            }]
+        }).then(() => console.log("Enviador de mail cerrado"), (err) => console.log("Error: " + err));
     }
- 
 }

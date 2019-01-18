@@ -29,6 +29,7 @@
         "nativescript-angular": "~7.1.0",
         "nativescript-camera": "^4.1.1",
         "nativescript-couchbase": "^1.0.18",
+        "nativescript-email": "^1.5.3",
         "nativescript-google-maps-sdk": "^2.6.1",
         "nativescript-mapbox": "^4.4.0",
         "nativescript-plugin-firebase": "^7.6.1",
